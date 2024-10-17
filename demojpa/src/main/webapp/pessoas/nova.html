@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Page Title</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+ <!--links de navegação-->
+ <a th:href="@{/}">Início</a> | <a th:href="@{/pessoas}">Lista de Pessoas</a>
+ <!--form para envio (cadastro) de pessoa-->
+ <form th:action="@{/pessoas/cadastro}" method="post">
+  <fieldset>
+   <legend>Pessoa</legend>
+   <label>Nome : </label>
+   <!--campo nome da pessoa-->
+   <input type="text" name="nome" />
+   |
+   <label>CPF : </label>
+   <!--campo cpf da pessoa-->
+   <input type="text" name="cpf" />
+   <br />
+   <!--link para submeter (enviar os dados do) formulário-->
+   <a href="#" onclick="document.forms[0].submit()">Salvar</a>
+  </fieldset>
+ </form>
+</body>
+
+</html>

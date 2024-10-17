@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Pessoas</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+ <!--links de navegação-->
+ <a th:href="@{/}">Início</a> | <a th:href="@{/pessoas/cadastro}">Cadastro de Pessoas</a>
+ <table>
+  <thead>
+   <tr>
+    <th>ID</th>
+    <th>CPF</th>
+    <th>Nome</th>
+    <th></th>
+   </tr>
+  </thead>
+  <!--tabela que exibe as pessoas cadastradas-->
+  <tbody>
+   <tr th:each=" p : ${listaPessoas}">
+    <td th:text="${p.id}"></td>
+    <td th:text="${p.cpf}"></td>
+    <td th:text="${p.nome}"></td>
+    <!--link para abrir os dados de uma pessoa-->
+    <td><a th:href="@{'/pessoas/abre/' + ${p.id}}">Ver</a></td>
+   </tr>
+  </tbody>
+ </table>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Page Title</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+ <!--links de navegação-->
+ <a th:href="@{/}">Início</a> | <a th:href="@{/pessoas}">Lista de Pessoas</a>
+ <!--formulário de envio para a atualização de uma pessoa-->
+ <form th:action="@{'/pessoas/atualiza/' + ${pessoa.id}}" method="post">
+  <fieldset>
+   <legend>Pessoa</legend>
+   <label>Nome : </label>
+   <input type="text" name="nome" th:value="${pessoa.nome}" />
+   |
+   <label>CPF : </label>
+   <input type="text" name="cpf" th:value="${pessoa.cpf}" />
+   <br />
+   <a href="#" onclick="document.forms[0].submit()">Salvar</a>
+   <!--link para exclusão de uma pessoa-->
+   <a th:href="@{'/pessoas/exclui/' + ${pessoa.id}}">Excluir</a>
+  </fieldset>
+ </form>
+</body>
+
+</html>

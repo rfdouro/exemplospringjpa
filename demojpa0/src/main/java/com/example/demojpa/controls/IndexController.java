@@ -34,7 +34,7 @@ public class IndexController {
  @Autowired
  LivroRepository livroRepository;
 
- // usado para queries customizadas aqui
+ // usado para queries customizadas aquis
  @PersistenceContext
  private EntityManager entityManager;
 
@@ -45,6 +45,7 @@ public class IndexController {
 
  @GetMapping("/custom")
  public @ResponseBody List custom() {
+  //cria uma consulta customizada diretamente no controller
   Query q = entityManager.createQuery("select A.nome, L.titulo from Autor A join A.livros L");
   return q.getResultList();
  }
